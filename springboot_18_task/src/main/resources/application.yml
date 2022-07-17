@@ -1,0 +1,5 @@
+spring:
+  task:
+    execution:
+      thread-name-prefix: spring_task_
+

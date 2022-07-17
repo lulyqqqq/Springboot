@@ -1,0 +1,39 @@
+#test:
+#  prop: vtb
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: nian0209
+  jdbc:
+    template:
+      fetch-size: -1    # 缓存行数
+      max-rows: 500     # 最大行数
+      query-timeout: -1 # 查询超时时间
+
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/test
+#    hikari:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: nian0209
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+testcase:
+  book:
+    id: ${random.int(10)} # 设置范围 10以内
+    name: ${random.value}
+    uuid: ${random.uuid}
+    publishTime: ${random.long}

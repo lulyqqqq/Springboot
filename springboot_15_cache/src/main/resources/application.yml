@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: nian0209
+  redis:
+    port: 6379
+    host: localhost
+  # 缓存技术选择 redis配置 需要开redis服务器
+  cache:
+    type: redis
+    redis:
+      # 是否缓存空值
+      cache-null-values: false
+      # 是否使用前缀 开启false之后 key-prefix的配置不起作用
+      use-key-prefix: false
+      # 指定前缀
+      key-prefix: aa
+      # 最大活动时间
+      time-to-live: 10s
+
+
+  # 缓存技术选择 ehcache配置
+#  cache:
+#    type: ehcache
+#    ehcache:
+#      config: classpath:ehcache.xml
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

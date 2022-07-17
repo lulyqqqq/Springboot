@@ -1,0 +1,39 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: nian0209
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    # 开启所有端点
+    enabled-by-default: true
+# 设置端点里内容 info 设置内容
+info:
+  appName: 02
+  version: @project.version@
+  company: Good Company
+  author: XD
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

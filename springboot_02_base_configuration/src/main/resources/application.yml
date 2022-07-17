@@ -1,0 +1,33 @@
+country: china
+province: beijing
+city: beijing
+area: haiding
+
+
+party: true
+
+birthday: 1949-10-01
+
+user:
+  name: ma
+  age: 16
+
+likes:
+  - game
+  - music
+  - sleep
+
+server:
+  port: 80
+
+baseDir: c:\win10
+#使用${属性名}引用数据
+tempDir: ${baseDir}\temp
+#使用引号包裹的字符串，其中的转义字符页可以生效
+tempDir2: "${baseDir}\temp \t1 \t2"
+
+datasource:
+  driver: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost/mybatis
+  username: root
+  password: nian0209

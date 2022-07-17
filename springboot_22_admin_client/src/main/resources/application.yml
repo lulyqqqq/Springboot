@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  boot:
+    admin:
+      client:
+        # 谁来监控
+        url: http://localhost:8080
+management:
+  # 对外开放那些功能
+  endpoint:
+    health:
+      show-details: always
+  # 在web端可以可以那些
+  endpoints:
+    web:
+      # 打开所有可查看的配置
+      exposure:
+        include: "*"
+    # 开启所有端点
+    enabled-by-default: true
+
+# 设置端点里内容 info 设置内容
+info:
+  appName: @02@
+  version: @9.9@
+  company: Good Company
+  author: XD
